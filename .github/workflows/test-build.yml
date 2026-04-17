@@ -40,7 +40,10 @@ jobs:
           echo "$HOME/dita-ot/bin" >> $GITHUB_PATH
 
       - name: Install mdita-yaml-keys plugin
-        run: dita install .
+        run: |
+          cd "$GITHUB_WORKSPACE"
+          zip -r /tmp/mdita-yaml-keys-plugin.zip . --exclude ".git/*"
+          dita install /tmp/mdita-yaml-keys-plugin.zip
 
       - name: Run test build
         run: |
