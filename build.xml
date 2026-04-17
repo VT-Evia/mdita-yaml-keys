@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  build.xml — mdita-yaml-keys DITA-OT plugin
+
+  Defines the ANT target "mdita-yaml-keys.preprocess", which is registered with
+  the DITA-OT extension point "depend.preprocess.pre" via plugin.xml. This target
+  fires before the OT's main preprocessing stage (and therefore before key resolution),
+  giving the Python script an opportunity to inject <keydef> elements into the
+  preprocessed map file.
+
+  The target calls python/mdita_yaml_keys.py with two arguments:
+    --input    the original MDITA map file path (${dita.input.filename})
+    --tempdir  the DITA-OT temp directory where the preprocessed map lives (${dita.temp.dir})
+-->
+<project name="mdita-yaml-keys" xmlns:dita="http://dita-ot.sourceforge.net">
+
+  <target name="mdita-yaml-keys.preprocess"
+          description="Inject YAML front-matter key definitions into the DITA-OT temp map">
+    <exec executable="python3" failonerror="true">
+      <arg value="${basedir}/python/mdita_yaml_keys.py"/>
+      <arg value="--input"/>
+      <arg value="${dita.input.filename}"/>
+      <arg value="--tempdir"/>
+      <arg value="${dita.temp.dir}"/>
+    </exec>
+  </target>
+
+</project>

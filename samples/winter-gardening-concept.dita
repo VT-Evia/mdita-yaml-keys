@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="winter-gardening-concept">
+  <title>About Winter Gardening</title>
+  <shortdesc>
+    <ph keyref="product-name"/> helps gardeners plan and track
+    a successful winter garden from first frost to spring thaw.
+  </shortdesc>
+  <conbody>
+    <p>
+      Version <ph keyref="product-version"/> of
+      <ph keyref="product-name"/> introduces a new climate zone
+      calculator that recommends planting windows based on your
+      local frost dates.
+    </p>
+    <p>
+      Winter gardening requires planning ahead. Use
+      <ph keyref="product-name"/> to log your soil conditions,
+      track seed inventory, and set reminders for succession planting.
+    </p>
+    <p>
+      For support, contact <ph keyref="company-name"/>.
+    </p>
+  </conbody>
+</concept>
